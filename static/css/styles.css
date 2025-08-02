@@ -1,0 +1,412 @@
+/**
+ * Custom styles for LinkedIn Post Generator - Fully Responsive
+ */
+
+/* Base Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.container {
+    margin-top: 50px;
+    padding: 0 15px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Form Styling */
+.form-group label {
+    color: #495057;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    padding: 15px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: #495057 !important;
+    background-color: #fff !important;
+    line-height: 1.5;
+    height: auto;
+    min-height: 48px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    color: #495057 !important;
+}
+
+.form-control option {
+    color: #495057 !important;
+    background-color: #fff !important;
+    padding: 8px 12px;
+}
+
+/* Button Styling */
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,123,255,0.4);
+}
+
+/* Output Section */
+#output {
+    min-height: 50px;
+}
+
+.alert {
+    border-radius: 12px;
+    border: none;
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    color: #0c5460;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+    margin-right: 10px;
+}
+
+/* Copy Button */
+.btn-outline-primary {
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .form-row {
+        margin: 0;
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Stack form fields vertically on mobile */
+    .col-md-3 {
+        margin-bottom: 15px;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    .alert {
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Tablet Responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .card-body {
+        padding: 1.8rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header p {
+        font-size: 0.9rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .form-control {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .form-control {
+        border-width: 3px;
+    }
+    
+    .btn-primary {
+        border: 3px solid #000;
+    }
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .card {
+    background-color: #2d2d2d !important;
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .form-group label {
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .form-check-label {
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .form-control {
+    background-color: #3d3d3d !important;
+    border-color: #555 !important;
+    color: #ffffff !important;
+    padding: 15px 15px !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    height: auto !important;
+    min-height: 48px !important;
+}
+
+[data-theme="dark"] .form-control option {
+    background-color: #3d3d3d !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .form-control:focus {
+    color: #ffffff !important;
+    background-color: #3d3d3d !important;
+}
+
+[data-theme="dark"] select.form-control {
+    color: #ffffff !important;
+    background-color: #3d3d3d !important;
+}
+
+[data-theme="dark"] select.form-control option {
+    color: #ffffff !important;
+    background-color: #3d3d3d !important;
+}
+
+[data-theme="dark"] .alert-success {
+    background-color: #1e4b2c !important;
+    border-color: #28a745 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .alert-success h5 {
+    color: #66d9ff !important;
+    font-weight: bold !important;
+}
+
+[data-theme="dark"] .alert-success strong {
+    color: #66d9ff !important;
+    font-weight: 600 !important;
+}
+
+[data-theme="dark"] .alert-success .hashtags {
+    color: #66b3ff !important;
+}
+
+[data-theme="dark"] .alert-success div[style*="background: #f8f9fa"] {
+    background: #3d3d3d !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .alert-info {
+    background-color: #1a4a5c !important;
+    border-color: #17a2b8 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .alert-danger {
+    background-color: #5c1f26 !important;
+    border-color: #dc3545 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-outline-primary {
+    color: #66b3ff !important;
+    border-color: #66b3ff !important;
+}
+
+[data-theme="dark"] .btn-outline-primary:hover {
+    background-color: #66b3ff !important;
+    color: #1a1a1a !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary {
+    color: #ffffff !important;
+    border-color: #6c757d !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary:hover {
+    background-color: #6c757d !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .text-primary {
+    color: #66b3ff !important;
+}
+
+[data-theme="dark"] .lead {
+    color: #b0b0b0 !important;
+}
+
